@@ -1,0 +1,117 @@
+/* Flow: calm organic surfaces designed for unhurried reading. */
+:root {
+  color-scheme: light dark;
+  --gala-color-background: light-dark(#f5faf7, #0d1a19);
+  --gala-color-surface: light-dark(#e7f2ed, #152725);
+  --gala-color-raised: light-dark(#ffffff, #1d312f);
+  --gala-color-text: light-dark(#17312d, #edf8f5);
+  --gala-color-muted: light-dark(#526b66, #a5bbb6);
+  --gala-color-border: light-dark(#788f8a, #66847e);
+  --gala-color-hairline: light-dark(#d4e4de, #29403c);
+  --gala-color-border-strong: light-dark(#3d625b, #8dada6);
+  --gala-color-accent: light-dark(var(--gala-accent-light, #17675d), var(--gala-accent-dark, #78d5c5));
+  --gala-font-body: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gala-font-display: ui-serif, "Iowan Old Style", Charter, Georgia, serif;
+  --gala-weight-display: 620;
+  --gala-leading-tight: 1.08;
+  --gala-leading-body: 1.76;
+  --gala-tracking-tight: -0.022em;
+  --gala-step: 1.12rem;
+  --gala-content-width: 76rem;
+  --gala-measure: 67ch;
+  --gala-radius-control: 1.2rem;
+  --gala-radius-surface: 2rem;
+  --gala-shadow-high: 0 1.5rem 3rem -2rem rgb(10 52 46 / 52%);
+  --gala-surface-border: var(--gala-color-hairline);
+  --gala-surface-shadow: 0 1rem 2.5rem -2rem rgb(10 52 46 / 45%);
+}
+
+:root[data-mode='light'] {
+  color-scheme: light;
+  --gala-color-background: #f5faf7;
+  --gala-color-surface: #e7f2ed;
+  --gala-color-raised: #ffffff;
+  --gala-color-text: #17312d;
+  --gala-color-muted: #526b66;
+  --gala-color-border: #788f8a;
+  --gala-color-hairline: #d4e4de;
+  --gala-color-border-strong: #3d625b;
+  --gala-color-accent: var(--gala-accent-light, #17675d);
+}
+
+:root[data-mode='dark'] {
+  color-scheme: dark;
+  --gala-color-background: #0d1a19;
+  --gala-color-surface: #152725;
+  --gala-color-raised: #1d312f;
+  --gala-color-text: #edf8f5;
+  --gala-color-muted: #a5bbb6;
+  --gala-color-border: #66847e;
+  --gala-color-hairline: #29403c;
+  --gala-color-border-strong: #8dada6;
+  --gala-color-accent: var(--gala-accent-dark, #78d5c5);
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 15% 0%, color-mix(in srgb, var(--gala-color-accent) 10%, transparent), transparent 34rem),
+    linear-gradient(180deg, transparent 70%, color-mix(in srgb, var(--gala-color-surface) 48%, transparent));
+}
+
+.gala-site-header {
+  padding: 0.65rem 0.85rem 0.65rem 1.1rem;
+  border: 1px solid var(--gala-color-hairline);
+  border-radius: 1.5rem;
+}
+
+.gala-article-header {
+  padding-block: clamp(4rem, 10vw, 8rem);
+  text-align: center;
+}
+
+.gala-article-header h1 { max-inline-size: 15ch; margin-inline: auto; font-size: clamp(2.8rem, 7vw, 5.7rem); }
+.gala-article-header .gala-eyebrow, .gala-article-header .gala-byline { margin-inline: auto; }
+
+.gala-card-index { gap: clamp(1rem, 2.2vw, 1.6rem); }
+.gala-card { border-radius: 2rem 2rem 0.8rem 2rem; }
+.gala-card-index li:nth-child(even) .gala-card { border-radius: 2rem 0.8rem 2rem 2rem; }
+
+.gala-tag-chip, .gala-badge, .gala-account-control { border-radius: 999px; }
+
+.gala-markdown :where(h2)::after {
+  content: "";
+  display: block;
+  inline-size: 3rem;
+  margin-block-start: 0.7rem;
+  border-block-end: 0.18rem solid var(--gala-color-accent);
+}
+
+.gala-markdown blockquote {
+  padding: 1.25rem 1.5rem;
+  background: var(--gala-color-surface);
+  border-inline-start: 0;
+  border-radius: 0.7rem 2rem 2rem 2rem;
+}
+
+.gala-markdown :where(pre) { border: 1px solid var(--gala-color-hairline); }
+.gala-gallery__item img { border-radius: var(--gala-radius-surface); }
+.gala-newsletter { border-radius: 2rem; }
+
+.gala-page-footer {
+  padding: var(--gala-space-lg);
+  background: var(--gala-color-surface);
+  border: 0;
+  border-radius: var(--gala-radius-surface) var(--gala-radius-surface) 0.7rem var(--gala-radius-surface);
+}
+
+@media (max-width: 42rem) {
+  .gala-article-header { text-align: start; }
+  .gala-article-header h1 { margin-inline: 0; }
+  .gala-page-footer { padding: var(--gala-space-md); }
+}
+
+@media print {
+  :root { --gala-color-background: #ffffff; --gala-color-text: #142c28; }
+  body { background: #ffffff; }
+  .gala-card, .gala-page-footer { box-shadow: none; }
+}

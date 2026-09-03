@@ -1,0 +1,18 @@
+{
+  "name": "@rathnasgala/theme-flow",
+  "version": "1.0.0",
+  "description": "Calm organic appearance theme for Gala publications",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rathnasgala/theme-flow.git"
+  },
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "hash": "node scripts/update-manifest-hash.mjs",
+    "test": "node --test",
+    "verify": "node scripts/verify.mjs && node --test"
+  }
+}

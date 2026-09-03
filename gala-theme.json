@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "flow",
+  "version": "1.0.0",
+  "name": "Flow",
+  "description": "Calm organic surfaces and generous rhythm for guides, journals, and thoughtful reading.",
+  "framework": {
+    "minimumVersion": "2.0.32",
+    "maximumVersionExclusive": "3.0.0"
+  },
+  "css": {
+    "path": "theme.css",
+    "sha256": "41ff1902bdf8022a6fe58282fbfcf9ac2e663c47b98101e01f4b8ac03c7f9b74"
+  }
+}
